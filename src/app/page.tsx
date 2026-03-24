@@ -1,4 +1,4 @@
-import TodoApp from "@/components/TodoApp";
+import TodoAppWrapper from "@/components/TodoAppWrapper";
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
             Organize your universe, one task at a time
           </p>
         </header>
-        <TodoApp />
+        <TodoAppWrapper />
       </div>
     </main>
   );
