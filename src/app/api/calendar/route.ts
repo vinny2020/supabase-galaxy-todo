@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Due date required" }, { status: 400 });
     }
 
-    // Build Google Calendar event URL
+    // Build Google Calendar pre-filled URL
     const dateStr = dueDate.replace(/-/g, "");
     const nextDay = new Date(dueDate + "T00:00:00");
     nextDay.setDate(nextDay.getDate() + 1);
@@ -19,11 +19,11 @@ export async function POST(request: NextRequest) {
       `Priority: ${priority}`,
       category ? `Category: ${category}` : "",
       "Created from Galaxy Todo ✦",
-    ].filter(Boolean).join("\\n");
+    ].filter(Boolean).join("\n");
 
     const calendarUrl = new URL("https://calendar.google.com/calendar/render");
     calendarUrl.searchParams.set("action", "TEMPLATE");
-    calendarUrl.searchParams.set("text", `${title}`);
+    calendarUrl.searchParams.set("text", title);
     calendarUrl.searchParams.set("dates", `${dateStr}/${endStr}`);
     calendarUrl.searchParams.set("details", details);
 
