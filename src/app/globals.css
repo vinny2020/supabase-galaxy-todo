@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-galaxy-deep: #2b1e3e;
+  --color-galaxy-cosmic: #4a4e8f;
+  --color-galaxy-lavender: #a490c2;
+  --color-galaxy-silver: #e6e6fa;
+  --color-galaxy-dark: #1a1128;
+  --color-galaxy-card: #362650;
+  --color-galaxy-accent: #6c5ce7;
+  --color-galaxy-success: #00b894;
+  --color-galaxy-warning: #fdcb6e;
+  --color-galaxy-urgent: #e17055;
+  --color-galaxy-hover: #4a3668;
+  --color-galaxy-border: #5a4478;
+  --font-display: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, var(--color-galaxy-dark) 0%, var(--color-galaxy-deep) 50%, #1e1540 100%);
+  min-height: 100vh;
+  color: var(--color-galaxy-silver);
+  font-family: var(--font-body);
+}
+
+.galaxy-card {
+  background: var(--color-galaxy-card);
+  border: 1px solid var(--color-galaxy-border);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.galaxy-card:hover {
+  border-color: var(--color-galaxy-lavender);
+  box-shadow: 0 0 20px rgba(164, 144, 194, 0.1);
+}
+
+.galaxy-input {
+  background: var(--color-galaxy-deep);
+  border: 1px solid var(--color-galaxy-border);
+  border-radius: 8px;
+  color: var(--color-galaxy-silver);
+  padding: 10px 14px;
+  font-family: var(--font-body);
+  transition: border-color 0.2s;
+}
+
+.galaxy-input:focus {
+  outline: none;
+  border-color: var(--color-galaxy-accent);
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+}
+
+.galaxy-btn {
+  background: var(--color-galaxy-accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.galaxy-btn:hover {
+  background: #7c6cf7;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+}
+
+.galaxy-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.priority-low { color: var(--color-galaxy-success); }
+.priority-medium { color: var(--color-galaxy-warning); }
+.priority-high { color: var(--color-galaxy-urgent); }
+.priority-urgent { color: #d63031; }
+
+.dragging {
+  opacity: 0.5;
+  transform: scale(1.02);
+}
